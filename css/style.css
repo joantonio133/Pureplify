@@ -1,0 +1,423 @@
+/* =========================================================
+   PURPLIFY - Custom CSS
+   Dimuat setelah Bootstrap agar bisa menimpa variabelnya.
+   ========================================================= */
+
+/* ---------- 1. Font (file lokal, jalan tanpa internet) ---------- */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("fonts/dm-sans-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 1000;
+  font-display: swap;
+}
+
+/* ---------- 2. Design tokens ---------- */
+:root {
+  --pl-bg: #140a24;          /* aubergine gelap */
+  --pl-bg-deep: #0e0619;
+  --pl-surface: #1f1236;
+  --pl-surface-2: #2c1a4d;
+  --pl-line: rgba(196, 167, 255, 0.16);
+  --pl-primary: #9d6bff;     /* violet */
+  --pl-primary-strong: #7c3aed;
+  --pl-orchid: #e879f9;      /* aksen */
+  --pl-text: #f1eaff;
+  --pl-muted: #b4a3d8;
+  --pl-radius-cover: 0.75rem;
+  --pl-radius-card: 1.25rem;
+  --pl-font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --pl-font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Menimpa variabel Bootstrap (dark theme) */
+html[data-bs-theme="dark"] {
+  --bs-body-bg: var(--pl-bg);
+  --bs-body-color: var(--pl-text);
+  --bs-body-font-family: var(--pl-font-body);
+  --bs-secondary-color: var(--pl-muted);
+  --bs-secondary-color-rgb: 180, 163, 216;
+  --bs-secondary-rgb: 180, 163, 216;
+  --bs-border-color: var(--pl-line);
+  --bs-primary: var(--pl-primary);
+  --bs-primary-rgb: 157, 107, 255;
+  --bs-link-color: #c9adff;
+  --bs-link-hover-color: #ffffff;
+  --bs-link-color-rgb: 201, 173, 255;
+  --bs-link-hover-color-rgb: 255, 255, 255;
+}
+
+/* ---------- 3. Base ---------- */
+body {
+  background: var(--pl-bg);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+h1, h2, h3, h4, h5, .navbar-brand {
+  font-family: var(--pl-font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+p { max-width: 65ch; }
+a { text-underline-offset: 3px; }
+
+:focus-visible {
+  outline: 2px solid var(--pl-orchid);
+  outline-offset: 3px;
+}
+
+.section-space { padding-block: 4.5rem; }
+.section-title { font-size: clamp(1.6rem, 3vw, 2.25rem); margin-bottom: 0.4rem; }
+.section-lead { color: var(--pl-muted); margin-bottom: 2rem; }
+
+/* ---------- 4. Tombol ---------- */
+.btn-purple {
+  --bs-btn-color: #17062d;
+  --bs-btn-bg: var(--pl-primary);
+  --bs-btn-border-color: var(--pl-primary);
+  --bs-btn-hover-color: #17062d;
+  --bs-btn-hover-bg: #b391ff;
+  --bs-btn-hover-border-color: #b391ff;
+  --bs-btn-active-color: #17062d;
+  --bs-btn-active-bg: #c4a9ff;
+  --bs-btn-active-border-color: #c4a9ff;
+  font-weight: 600;
+}
+.btn-ghost {
+  --bs-btn-color: var(--pl-text);
+  --bs-btn-border-color: rgba(241, 234, 255, 0.4);
+  --bs-btn-hover-color: #17062d;
+  --bs-btn-hover-bg: var(--pl-text);
+  --bs-btn-hover-border-color: var(--pl-text);
+  --bs-btn-active-color: #17062d;
+  --bs-btn-active-bg: #ffffff;
+  font-weight: 600;
+}
+
+/* ---------- 5. Navbar ---------- */
+.navbar-purplify {
+  background: rgba(20, 10, 36, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--pl-line);
+}
+.navbar-purplify .navbar-brand { font-size: 1.4rem; color: var(--pl-text); }
+.navbar-purplify .nav-link {
+  color: var(--pl-muted);
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+}
+.navbar-purplify .nav-link:hover { color: var(--pl-text); }
+.navbar-purplify .nav-link.active {
+  color: var(--pl-text);
+  background: var(--pl-surface-2);
+}
+
+/* ---------- 6. Hero + carousel ---------- */
+.hero {
+  background:
+    radial-gradient(900px 500px at 85% 20%, rgba(157, 107, 255, 0.35), transparent 60%),
+    radial-gradient(700px 400px at 5% 90%, rgba(232, 121, 249, 0.18), transparent 60%),
+    var(--pl-bg-deep);
+  border-bottom: 1px solid var(--pl-line);
+}
+.hero .carousel-item { min-height: 540px; }
+.hero-slide { min-height: 540px; padding-block: 3.5rem 5rem; }
+.hero-title {
+  font-size: clamp(2.2rem, 5.2vw, 4rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.hero-text { color: var(--pl-muted); font-size: 1.15rem; margin-bottom: 1.75rem; }
+.hero .carousel-indicators { margin-bottom: 1.25rem; }
+.hero .carousel-indicators [data-bs-target] {
+  width: 28px; height: 4px; border: 0; border-radius: 4px;
+  background: var(--pl-primary);
+}
+
+/* Piringan hitam (satu-satunya elemen bergerak di hero) */
+.vinyl {
+  position: relative;
+  width: min(380px, 72vw);
+  aspect-ratio: 1;
+  margin-inline: auto;
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle at center, #170b29 0 2px, #26144a 2px 4px);
+  box-shadow: 0 30px 80px rgba(124, 58, 237, 0.45), inset 0 0 0 6px #0e0619;
+  animation: spin 16s linear infinite;
+}
+.vinyl::before {
+  content: "";
+  position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 20deg, transparent 0 20%, rgba(255,255,255,.16) 27%, transparent 34% 70%, rgba(255,255,255,.12) 77%, transparent 84%);
+}
+.vinyl img {
+  position: absolute; inset: 31%;
+  width: 38%; height: 38%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #0e0619;
+}
+.vinyl::after {
+  content: "";
+  position: absolute; inset: 48.5%;
+  border-radius: 50%;
+  background: var(--pl-bg-deep);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Tiga cover miring (slide 2) */
+.cover-fan { position: relative; height: 340px; max-width: 460px; margin-inline: auto; }
+.cover-fan img {
+  position: absolute; top: 0;
+  width: 240px; height: 240px;
+  border-radius: var(--pl-radius-cover);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+.cover-fan img:nth-child(1) { left: 0;    top: 60px; transform: rotate(-9deg); }
+.cover-fan img:nth-child(2) { left: 110px; top: 20px; transform: rotate(2deg); z-index: 1; }
+.cover-fan img:nth-child(3) { right: 0;   top: 70px; transform: rotate(10deg); }
+
+/* Kolase 2x2 (slide 3) */
+.cover-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+  max-width: 360px; margin-inline: auto;
+}
+.cover-grid img { width: 100%; aspect-ratio: 1; border-radius: var(--pl-radius-cover); }
+.cover-grid img:nth-child(2) { transform: translateY(1.25rem); }
+.cover-grid img:nth-child(4) { transform: translateY(1.25rem); }
+
+/* ---------- 7. Kartu lagu (Home) ---------- */
+.song-card {
+  background: var(--pl-surface);
+  border: 1px solid var(--pl-line);
+  border-radius: var(--pl-radius-card);
+  overflow: hidden;
+}
+.song-card:hover { border-color: rgba(157, 107, 255, 0.6); }
+.song-card .card-img-top { height: auto; aspect-ratio: 1; object-fit: cover; }
+.song-card .card-title { font-family: var(--pl-font-display); font-weight: 600; }
+.song-card .card-text { color: var(--pl-muted); font-size: 0.9rem; }
+.rank-badge {
+  position: absolute; top: 0.6rem; left: 0.6rem;
+  min-width: 2.1rem; padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(14, 6, 25, 0.82);
+  color: var(--pl-text);
+  font-family: var(--pl-font-display);
+  font-weight: 700; font-size: 0.85rem; text-align: center;
+}
+
+/* ---------- 8. Audio native (dipakai di semua halaman) ---------- */
+audio {
+  display: block;
+  width: 100%;
+  height: 40px;
+  color-scheme: dark;
+  border-radius: 999px;
+  filter: sepia(0.6) hue-rotate(215deg) saturate(1.7);
+}
+
+/* ---------- 9. Baris lagu (Playlist & Search) ---------- */
+.track {
+  background: var(--pl-surface);
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+}
+.track:hover { background: var(--pl-surface-2); }
+.track-rank {
+  display: inline-block; width: 2.4rem; text-align: center;
+  font-family: var(--pl-font-display);
+  font-size: 1.35rem; font-weight: 700;
+  color: var(--pl-muted);
+}
+.track-cover { width: 56px; height: 56px; border-radius: 0.6rem; object-fit: cover; }
+.track-title { font-size: 1.05rem; margin: 0; }
+.track-artist { color: var(--pl-muted); margin: 0; font-size: 0.9rem; }
+.badge-genre {
+  background: rgba(157, 107, 255, 0.18);
+  color: #d8c6ff;
+  font-weight: 500;
+  border: 1px solid rgba(157, 107, 255, 0.35);
+}
+
+/* ---------- 10. Header playlist ---------- */
+.playlist-head {
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.45), rgba(20, 10, 36, 0) 100%);
+  padding-block: 4rem 2.5rem;
+}
+.playlist-cover {
+  width: 100%; max-width: 260px; aspect-ratio: 1;
+  border-radius: var(--pl-radius-cover);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+.page-title { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.05; }
+
+/* ---------- 11. Tile suasana ---------- */
+.mood-tile {
+  display: block;
+  height: 100%;
+  padding: 1.5rem 1.25rem;
+  border-radius: var(--pl-radius-card);
+  color: var(--pl-text);
+  text-decoration: none;
+  border: 1px solid var(--pl-line);
+}
+.mood-tile:hover { color: #fff; border-color: rgba(255, 255, 255, 0.5); }
+.mood-tile i { font-size: 1.9rem; display: block; margin-bottom: 2.25rem; }
+.mood-tile h3 { font-size: 1.15rem; margin: 0; }
+.mood-tile p { font-size: 0.85rem; margin: 0.15rem 0 0; opacity: 0.85; }
+.mood-1 { background: linear-gradient(150deg, #3b0764, #6d28d9); }
+.mood-2 { background: linear-gradient(150deg, #581c87, #c026d3); }
+.mood-3 { background: linear-gradient(150deg, #4c1d95, #e879f9 140%); }
+.mood-4 { background: linear-gradient(150deg, #1e1b4b, #6366f1); }
+.mood-5 { background: linear-gradient(150deg, #4a044e, #9333ea); }
+.mood-6 { background: linear-gradient(150deg, #312e81, #a78bfa 140%); }
+
+/* ---------- 12. Fitur ---------- */
+.feature-card {
+  background: var(--pl-surface);
+  border: 1px solid var(--pl-line);
+  border-radius: var(--pl-radius-card);
+  padding: 1.75rem;
+  height: 100%;
+}
+.feature-icon {
+  display: inline-grid; place-items: center;
+  width: 3rem; height: 3rem;
+  border-radius: 0.9rem;
+  background: rgba(157, 107, 255, 0.2);
+  color: var(--pl-orchid);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- 13. Galeri ---------- */
+.gallery-btn {
+  display: block; width: 100%; padding: 0; border: 0;
+  background: none; border-radius: var(--pl-radius-cover); overflow: hidden;
+}
+.gallery-btn img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.gallery-btn:hover img { filter: brightness(1.15); }
+.gallery-caption { color: var(--pl-muted); font-size: 0.85rem; margin: 0.4rem 0 0; }
+.modal-content { background: var(--pl-surface); border: 1px solid var(--pl-line); }
+
+/* ---------- 14. Tab playlist ---------- */
+.nav-pills .nav-link { color: var(--pl-muted); border-radius: 999px; padding-inline: 1.25rem; }
+.nav-pills .nav-link:hover { color: var(--pl-text); }
+.nav-pills .nav-link.active { background: var(--pl-primary); color: #17062d; font-weight: 600; }
+
+/* ---------- 15. Search: filter genre tanpa JavaScript ---------- */
+.filter-radio { position: absolute; opacity: 0; pointer-events: none; }
+.filter-chip {
+  display: inline-block;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--pl-line);
+  background: var(--pl-surface);
+  color: var(--pl-text);
+  cursor: pointer;
+  font-weight: 500;
+}
+.filter-chip:hover { background: var(--pl-surface-2); }
+
+#g-semua:checked ~ .filter-chips label[for="g-semua"],
+#g-pop:checked ~ .filter-chips label[for="g-pop"],
+#g-indie:checked ~ .filter-chips label[for="g-indie"],
+#g-folk:checked ~ .filter-chips label[for="g-folk"],
+#g-elektronik:checked ~ .filter-chips label[for="g-elektronik"] {
+  background: var(--pl-primary);
+  border-color: var(--pl-primary);
+  color: #17062d;
+  font-weight: 600;
+}
+.filter-radio:focus-visible ~ .filter-chips label {
+  outline-offset: 2px;
+}
+#g-semua:focus-visible ~ .filter-chips label[for="g-semua"],
+#g-pop:focus-visible ~ .filter-chips label[for="g-pop"],
+#g-indie:focus-visible ~ .filter-chips label[for="g-indie"],
+#g-folk:focus-visible ~ .filter-chips label[for="g-folk"],
+#g-elektronik:focus-visible ~ .filter-chips label[for="g-elektronik"] {
+  outline: 2px solid var(--pl-orchid);
+}
+
+.filter-scope:has(#g-pop:checked) .track:not([data-genre="pop"]),
+.filter-scope:has(#g-indie:checked) .track:not([data-genre="indie"]),
+.filter-scope:has(#g-folk:checked) .track:not([data-genre="folk"]),
+.filter-scope:has(#g-elektronik:checked) .track:not([data-genre="elektronik"]) {
+  display: none;
+}
+
+.search-box .form-control {
+  background: var(--pl-surface);
+  border-color: var(--pl-line);
+  color: var(--pl-text);
+}
+.search-box .form-control::placeholder { color: var(--pl-muted); }
+.search-box .input-group-text {
+  background: var(--pl-surface);
+  border-color: var(--pl-line);
+  color: var(--pl-muted);
+}
+
+/* ---------- 16. Form (Login, Register, Newsletter) ---------- */
+.auth-card {
+  background: var(--pl-surface);
+  border: 1px solid var(--pl-line);
+  border-radius: var(--pl-radius-card);
+}
+.auth-art { border-radius: var(--pl-radius-card); width: 100%; height: 100%; object-fit: cover; min-height: 320px; }
+.form-control, .form-select {
+  background-color: var(--pl-bg);
+  border-color: var(--pl-line);
+  color: var(--pl-text);
+}
+.form-control:focus, .form-select:focus {
+  background-color: var(--pl-bg);
+  border-color: var(--pl-primary);
+  color: var(--pl-text);
+  box-shadow: 0 0 0 0.2rem rgba(157, 107, 255, 0.3);
+}
+.form-floating > label { color: var(--pl-muted); }
+.form-check-input:checked { background-color: var(--pl-primary); border-color: var(--pl-primary); }
+
+.newsletter {
+  background: linear-gradient(120deg, var(--pl-primary-strong), #b34fd8);
+  border-radius: var(--pl-radius-card);
+  padding: 2.5rem;
+}
+.newsletter .form-control { background: rgba(14, 6, 25, 0.55); border-color: transparent; }
+
+/* ---------- 17. Footer ---------- */
+.site-footer {
+  background: var(--pl-bg-deep);
+  border-top: 1px solid var(--pl-line);
+  color: var(--pl-muted);
+}
+.site-footer h2 { font-size: 1rem; color: var(--pl-text); }
+.site-footer a { color: var(--pl-muted); text-decoration: none; }
+.site-footer a:hover { color: var(--pl-text); text-decoration: underline; }
+
+/* ---------- 18. Aksesibilitas gerak ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .vinyl { animation: none; }
+}
+
+/* ---------- 19. Responsive tambahan ---------- */
+@media (max-width: 991.98px) {
+  .hero-slide { text-align: center; padding-block: 2.5rem 4.5rem; }
+  .hero-slide p { margin-inline: auto; }
+  .section-space { padding-block: 3rem; }
+  .cover-fan { transform: scale(0.8); margin-top: -1rem; }
+}
+@media (max-width: 575.98px) {
+  .newsletter { padding: 1.75rem; }
+  .track-rank { width: 1.5rem; font-size: 1.1rem; }
+}

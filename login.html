@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login &amp; Register | Purplify</title>
+  <meta name="description" content="Masuk atau buat akun Purplify.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-purplify" aria-label="Navigasi utama">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="images/logo.svg" width="36" height="36" alt="">
+          <span>Purplify</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuUtama"
+                aria-controls="menuUtama" aria-expanded="false" aria-label="Buka menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuUtama">
+          <ul class="navbar-nav me-auto mb-3 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="playlist.html">Playlist</a></li>
+          <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+          </ul>
+          <a class="btn btn-ghost rounded-pill px-4" href="login.html">Login &amp; Register</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section-space" aria-labelledby="judul-auth">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6 d-none d-lg-block">
+            <img class="auth-art" src="images/auth-art.svg" alt="Ilustrasi dua lingkaran ungu yang saling bertaut">
+          </div>
+          <div class="col-lg-6">
+            <div class="auth-card p-4 p-md-5">
+              <h1 id="judul-auth" class="h2 mb-1">Masuk ke Purplify</h1>
+              <p class="text-secondary mb-4">Simpan playlist dan lanjutkan lagu terakhir yang kamu dengar.</p>
+
+              <ul class="nav nav-pills nav-fill mb-4 gap-2" id="tabAuth" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="tab-login" data-bs-toggle="pill" data-bs-target="#pane-login" type="button" role="tab" aria-controls="pane-login" aria-selected="true">Login</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="tab-register" data-bs-toggle="pill" data-bs-target="#pane-register" type="button" role="tab" aria-controls="pane-register" aria-selected="false">Register</button>
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <!-- FORM LOGIN -->
+                <div class="tab-pane fade show active" id="pane-login" role="tabpanel" aria-labelledby="tab-login" tabindex="0">
+                  <form action="#" method="post">
+                    <div class="form-floating mb-3">
+                      <input type="email" class="form-control" id="loginEmail" name="email" placeholder="nama@email.com" required>
+                      <label for="loginEmail">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Kata sandi" required>
+                      <label for="loginPassword">Kata sandi</label>
+                    </div>
+                    <div class="form-check mb-4">
+                      <input class="form-check-input" type="checkbox" id="ingatSaya" name="ingat">
+                      <label class="form-check-label" for="ingatSaya">Ingat saya di perangkat ini</label>
+                    </div>
+                    <button type="submit" class="btn btn-purple btn-lg w-100 rounded-pill">Login</button>
+                  </form>
+                </div>
+
+                <!-- FORM REGISTER -->
+                <div class="tab-pane fade" id="pane-register" role="tabpanel" aria-labelledby="tab-register" tabindex="0">
+                  <form action="#" method="post">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="regNama" name="nama" placeholder="Nama lengkap" required>
+                      <label for="regNama">Nama lengkap</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="email" class="form-control" id="regEmail" name="email" placeholder="nama@email.com" required>
+                      <label for="regEmail">Email</label>
+                    </div>
+                    <div class="row g-3 mb-3">
+                      <div class="col-sm-6">
+                        <div class="form-floating">
+                          <input type="password" class="form-control" id="regPassword" name="password" placeholder="Kata sandi" minlength="8" required>
+                          <label for="regPassword">Kata sandi</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-floating">
+                          <input type="password" class="form-control" id="regKonfirmasi" name="konfirmasi" placeholder="Ulangi kata sandi" minlength="8" required>
+                          <label for="regKonfirmasi">Ulangi kata sandi</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="regGenre" name="genre">
+                        <option value="pop" selected>Pop</option>
+                        <option value="indie">Indie</option>
+                        <option value="folk">Folk</option>
+                        <option value="elektronik">Elektronik</option>
+                      </select>
+                      <label for="regGenre">Genre favorit</label>
+                    </div>
+                    <div class="form-check mb-4">
+                      <input class="form-check-input" type="checkbox" id="setuju" name="setuju" required>
+                      <label class="form-check-label" for="setuju">Saya setuju dengan syarat dan ketentuan Purplify</label>
+                    </div>
+                    <button type="submit" class="btn btn-purple btn-lg w-100 rounded-pill">Buat akun</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer py-5 mt-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <a class="d-flex align-items-center gap-2 mb-3 text-decoration-none" href="index.html">
+            <img src="images/logo.svg" width="36" height="36" alt="">
+            <span class="h4 mb-0 text-white">Purplify</span>
+          </a>
+          <p>Pemutar musik bertema ungu untuk lagu-lagu Indonesia. Semua lagu diputar dari file MP3 di komputer, jadi bisa didengar offline.</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h2>Jelajahi</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="login.html">Login &amp; Register</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h2>Tentang proyek</h2>
+          <p class="small">Proyek Mid Web Design, dibuat dengan HTML, CSS, dan Bootstrap. Cover dan ilustrasi dibuat khusus untuk proyek ini. Hak cipta lagu milik masing-masing artis.</p>
+        </div>
+      </div>
+      <hr class="border-secondary-subtle my-4">
+      <p class="small mb-0">&copy; 2026 Purplify. Dibuat oleh kelompok ANONYMOUS untuk tugas kuliah.</p>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

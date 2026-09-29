@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search | Purplify</title>
+  <meta name="description" content="Cari dan saring lagu Indonesia berdasarkan genre di Purplify.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-purplify" aria-label="Navigasi utama">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="images/logo.svg" width="36" height="36" alt="">
+          <span>Purplify</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuUtama"
+                aria-controls="menuUtama" aria-expanded="false" aria-label="Buka menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuUtama">
+          <ul class="navbar-nav me-auto mb-3 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="playlist.html">Playlist</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="search.html">Search</a></li>
+          </ul>
+          <a class="btn btn-purple rounded-pill px-4" href="login.html">Login &amp; Register</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section-space pb-3" aria-labelledby="judul-search">
+      <div class="container">
+        <h1 id="judul-search" class="page-title mb-4">Cari lagu</h1>
+
+        <form class="search-box" action="#" method="get" role="search">
+          <label for="kataKunci" class="visually-hidden">Cari judul lagu atau artis</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-text"><i class="bi bi-search" aria-hidden="true"></i></span>
+            <input type="search" class="form-control" id="kataKunci" name="q" list="saranLagu" placeholder="Judul lagu atau nama artis">
+            <datalist id="saranLagu">
+            <option value="Komang">
+            <option value="Hati-Hati di Jalan">
+            <option value="Sial">
+            <option value="Nina">
+            <option value="Bertaut">
+            <option value="Lathi">
+            <option value="Terlalu Lama Sendiri">
+            <option value="Melukis Senja">
+            <option value="Sampai Jadi Debu">
+            <option value="Kota Ini Tak Sama Tanpamu">
+            </datalist>
+            <button class="btn btn-purple px-4" type="submit">Cari</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="pb-5" aria-labelledby="judul-hasil">
+      <div class="container">
+        <h2 id="judul-hasil" class="h4 mb-3">Telusuri berdasarkan genre</h2>
+
+        <!-- Filter genre memakai radio + CSS :has(), tanpa JavaScript -->
+        <div class="filter-scope">
+        <input class="filter-radio" type="radio" name="genre" id="g-semua" checked>
+        <input class="filter-radio" type="radio" name="genre" id="g-pop">
+        <input class="filter-radio" type="radio" name="genre" id="g-indie">
+        <input class="filter-radio" type="radio" name="genre" id="g-folk">
+        <input class="filter-radio" type="radio" name="genre" id="g-elektronik">
+          <div class="filter-chips d-flex flex-wrap gap-2 mb-4" role="group" aria-label="Filter genre">
+          <label class="filter-chip" for="g-semua">Semua</label>
+          <label class="filter-chip" for="g-pop">Pop</label>
+          <label class="filter-chip" for="g-indie">Indie</label>
+          <label class="filter-chip" for="g-folk">Folk</label>
+          <label class="filter-chip" for="g-elektronik">Elektronik</label>
+          </div>
+          <div class="results">
+        <article class="track mb-2" data-genre="pop">
+          <div class="row align-items-center g-3">
+            <div class="col-auto"><img class="track-cover" src="images/covers/01-komang.svg" alt="Cover lagu Komang" width="56" height="56" loading="lazy"></div>
+            <div class="col">
+              <h3 class="track-title">Komang</h3>
+              <p class="track-artist">Raim Laode</p>
+            </div>
+            <div class="col-auto d-none d-md-block"><span class="badge rounded-pill badge-genre">Pop</span></div>
+            <div class="col-12 col-md-5 col-lg-4">
+              <audio controls preload="none" src="audio/01-komang.mp3" aria-label="Putar Komang - Raim Laode">Browser kamu tidak mendukung audio.</audio>
+            </div>
+          </div>
+        </article>
+        <article class="track mb-2" data-genre="pop">
+          <div class="row align-items-center g-3">
+            <div class="col-auto"><img class="track-cover" src="images/covers/02-hati-hati-di-jalan.svg" alt="Cover lagu Hati-Hati di Jalan" width="56" height="56" loading="lazy"></div>
+            <div class="col">
+              <h3 class="track-title">Hati-Hati di Jalan</h3>
+              <p class="track-artist">Tulus</p>
+            </div>
+            <div class="col-auto d-none d-md-block"><span class="badge rounded-pill badge-genre">Pop</span></div>
+            <div class="col-12 col-md-5 col-lg-4">
+              <audio controls preload="none" src="audio/02-hati-hati-di-jalan.mp3" aria-label="Putar Hati-Hati di Jalan - Tulus">Browser kamu tidak mendukung audio.</audio>
+            </div>
+          </div>
+        </article>
+        <article class="track mb-2" data-genre="pop">
+          <div class="row align-items-center g-3">
+            <div class="col-auto"><img class="track-cover" src="images/covers/03-sial.svg" alt="Cover lagu Sial" width="56" height="56" loading="lazy"></div>
+            <div class="col">
+              <h3 class="track-title">Sial</h3>
+              <p class="track-artist">Mahalini</p>
+            </div>
+            <div class="col-auto d-none d-md-block"><span class="badge rounded-pill badge-genre">Pop</span></div>
+            <div class="col-12 col-md-5 col-lg-4">
+              <audio controls preload="none" src="audio/03-sial.mp3" aria-label="Putar Sial - Mahalini">Browser kamu tidak mendukung audio.</audio>
+            </div>
+          </div>
+        </article>
+        <article class="track mb-2" data-genre="indie">
+          <div class="row align-items-center g-3">
+            <div class="col-auto"><img class="track-cover" src="images/covers/04-nina.svg" alt="Cover lagu Nina" width="56" height="56" loading="lazy"></div>
+            <div class="col">
+              <h3 class="track-title">Nina</h3>
+              <p class="track-artist">Feby Putri</p>
+            </div>
+            <div class="col-auto d-none d-md-block"><span class="badge rounded-pill badge-genre">Indie</span></div>
+            <div class="col-12 col-md-5 col-lg-4">
+              <audio controls preload="none" src="audio/04-nina.mp3" aria-label="Putar Nina - Feby Putri">Browser kamu tidak mendukung audio.</audio>
+            </div>
+          </div>
+        </article>
+        <article class="track mb-2" data-genre="indie">
+          <div class="row align-items-center g-3">
+            <div class="col-auto"><img class="track-cover" src="images/covers/05-bertaut.svg" alt="Cover lagu Bertaut" width="56" height="56" loading="lazy"></div>
+            <div class="col">
+              <h3 class="track-title">Bertaut</h3>
+              <p class="track-artist">Nadin Amizah</p>
+            </div>
+            <div class="col-auto d-none d-md-block"><span class="badge rounded-pill badge-genre">Indie</span></div>
+            <div class="col-12 col-md-5 col-lg-4">
+              <audio controls preload="none" src="audio/05-bertaut.mp3" aria-label="Putar Bertaut - Nadin Amizah">Browser kamu tidak mendukung audio.</audio>
+            </div>
+          </div>
+        </article>
+        <article class="track mb-2" data-genre="elektronik">
+          <div class="row align-items-center g-3">
+            <div class="col-auto"><img class="track-cover" src="images/covers/06-lathi.svg" alt="Cover lagu Lathi" width="56" height="56" loading="lazy"></div>
+            <div class="col">
+              <h3 class="track-title">Lathi</h3>
+              <p class="track-artist">Weird Genius ft. Sara Fajira</p>
+            </div>
+            <div class="col-auto d-none d-md-block"><span class="badge rounded-pill badge-genre">Elektronik</span></div>
+            <div class="col-12 col-md-5 col-lg-4">
+              <audio controls preload="none" src="audio/06-lathi.mp3" aria-label="Putar Lathi - Weird Genius ft. Sara Fajira">Browser kamu tidak mendukung audio.</audio>
+            </div>
+          </div>
+        </article>
+        <article class="track mb-2" data-genre="indie">
+          <div class="row align-items-center g-3">
+            <div class="col-auto"><img class="track-cover" src="images/covers/07-terlalu-lama-sendiri.svg" alt="Cover lagu Terlalu Lama Sendiri" width="56" height="56" loading="lazy"></div>
+            <div class="col">
+              <h3 class="track-title">Terlalu Lama Sendiri</h3>
+              <p class="track-artist">Kunto Aji</p>
+            </div>
+            <div class="col-auto d-none d-md-block"><span class="badge rounded-pill badge-genre">Indie</span></div>
+            <div class="col-12 col-md-5 col-lg-4">
+              <audio controls preload="none" src="audio/07-terlalu-lama-sendiri.mp3" aria-label="Putar Terlalu Lama Sendiri - Kunto Aji">Browser kamu tidak mendukung audio.</audio>
+            </div>
+          </div>
+        </article>
+        <article class="track mb-2" data-genre="pop">
+          <div class="row align-items-center g-3">
+            <div class="col-auto"><img class="track-cover" src="images/covers/08-melukis-senja.svg" alt="Cover lagu Melukis Senja" width="56" height="56" loading="lazy"></div>
+            <div class="col">
+              <h3 class="track-title">Melukis Senja</h3>
+              <p class="track-artist">Budi Doremi</p>
+            </div>
+            <div class="col-auto d-none d-md-block"><span class="badge rounded-pill badge-genre">Pop</span></div>
+            <div class="col-12 col-md-5 col-lg-4">
+              <audio controls preload="none" src="audio/08-melukis-senja.mp3" aria-label="Putar Melukis Senja - Budi Doremi">Browser kamu tidak mendukung audio.</audio>
+            </div>
+          </div>
+        </article>
+        <article class="track mb-2" data-genre="folk">
+          <div class="row align-items-center g-3">
+            <div class="col-auto"><img class="track-cover" src="images/covers/09-sampai-jadi-debu.svg" alt="Cover lagu Sampai Jadi Debu" width="56" height="56" loading="lazy"></div>
+            <div class="col">
+              <h3 class="track-title">Sampai Jadi Debu</h3>
+              <p class="track-artist">Banda Neira</p>
+            </div>
+            <div class="col-auto d-none d-md-block"><span class="badge rounded-pill badge-genre">Folk</span></div>
+            <div class="col-12 col-md-5 col-lg-4">
+              <audio controls preload="none" src="audio/09-sampai-jadi-debu.mp3" aria-label="Putar Sampai Jadi Debu - Banda Neira">Browser kamu tidak mendukung audio.</audio>
+            </div>
+          </div>
+        </article>
+        <article class="track mb-2" data-genre="pop">
+          <div class="row align-items-center g-3">
+            <div class="col-auto"><img class="track-cover" src="images/covers/10-kota-ini-tak-sama-tanpamu.svg" alt="Cover lagu Kota Ini Tak Sama Tanpamu" width="56" height="56" loading="lazy"></div>
+            <div class="col">
+              <h3 class="track-title">Kota Ini Tak Sama Tanpamu</h3>
+              <p class="track-artist">Nadhif Basalamah</p>
+            </div>
+            <div class="col-auto d-none d-md-block"><span class="badge rounded-pill badge-genre">Pop</span></div>
+            <div class="col-12 col-md-5 col-lg-4">
+              <audio controls preload="none" src="audio/10-kota-ini-tak-sama-tanpamu.mp3" aria-label="Putar Kota Ini Tak Sama Tanpamu - Nadhif Basalamah">Browser kamu tidak mendukung audio.</audio>
+            </div>
+          </div>
+        </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer py-5 mt-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <a class="d-flex align-items-center gap-2 mb-3 text-decoration-none" href="index.html">
+            <img src="images/logo.svg" width="36" height="36" alt="">
+            <span class="h4 mb-0 text-white">Purplify</span>
+          </a>
+          <p>Pemutar musik bertema ungu untuk lagu-lagu Indonesia. Semua lagu diputar dari file MP3 di komputer, jadi bisa didengar offline.</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h2>Jelajahi</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="login.html">Login &amp; Register</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h2>Tentang proyek</h2>
+          <p class="small">Proyek Mid Web Design, dibuat dengan HTML, CSS, dan Bootstrap. Cover dan ilustrasi dibuat khusus untuk proyek ini. Hak cipta lagu milik masing-masing artis.</p>
+        </div>
+      </div>
+      <hr class="border-secondary-subtle my-4">
+      <p class="small mb-0">&copy; 2026 Purplify. Dibuat oleh kelompok ANONYMOUS untuk tugas kuliah.</p>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

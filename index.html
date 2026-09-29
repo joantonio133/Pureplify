@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Purplify</title>
+  <meta name="description" content="Purplify, pemutar musik bertema ungu dengan Top 10 lagu Indonesia yang bisa diputar offline.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-purplify" aria-label="Navigasi utama">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="images/logo.svg" width="36" height="36" alt="">
+          <span>Purplify</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuUtama"
+                aria-controls="menuUtama" aria-expanded="false" aria-label="Buka menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuUtama">
+          <ul class="navbar-nav me-auto mb-3 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="playlist.html">Playlist</a></li>
+          <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+          </ul>
+          <a class="btn btn-purple rounded-pill px-4" href="login.html">Login &amp; Register</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== 1. HERO (Bootstrap Carousel) ===== -->
+    <section class="hero" aria-label="Sorotan Purplify">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="8000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="container hero-slide">
+              <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                  <h1 class="hero-title">Lagu Indonesia favoritmu, langsung putar.</h1>
+                  <p class="hero-text">Dengarkan Top 10 lagu Indonesia dari file MP3 di komputermu. Tanpa kuota dan tanpa iklan.</p>
+                  <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
+                    <a class="btn btn-purple btn-lg rounded-pill px-4" href="#top10"><i class="bi bi-play-fill" aria-hidden="true"></i> Putar Top 10</a>
+                    <a class="btn btn-ghost btn-lg rounded-pill px-4" href="playlist.html">Lihat playlist</a>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="vinyl" role="img" aria-label="Piringan hitam dengan cover lagu Komang">
+                    <img src="images/covers/01-komang.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container hero-slide">
+              <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                  <h2 class="hero-title">Sepuluh lagu yang sedang dinyanyikan semua orang.</h2>
+                  <p class="hero-text">Dari Raim Laode sampai Nadhif Basalamah, semuanya ada dalam satu playlist.</p>
+                  <a class="btn btn-purple btn-lg rounded-pill px-4" href="playlist.html">Buka playlist</a>
+                </div>
+                <div class="col-lg-6">
+                  <div class="cover-fan">
+                    <img src="images/covers/02-hati-hati-di-jalan.svg" alt="Cover lagu Hati-Hati di Jalan">
+                    <img src="images/covers/03-sial.svg" alt="Cover lagu Sial">
+                    <img src="images/covers/06-lathi.svg" alt="Cover lagu Lathi">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container hero-slide">
+              <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                  <h2 class="hero-title">Cari lagu sesuai genre dan suasana hatimu.</h2>
+                  <p class="hero-text">Pilih Pop, Indie, Folk, atau Elektronik, lalu daftar lagu langsung menyesuaikan.</p>
+                  <a class="btn btn-purple btn-lg rounded-pill px-4" href="search.html">Mulai mencari</a>
+                </div>
+                <div class="col-lg-6">
+                  <div class="cover-grid">
+                    <img src="images/covers/04-nina.svg" alt="Cover lagu Nina">
+                    <img src="images/covers/05-bertaut.svg" alt="Cover lagu Bertaut">
+                    <img src="images/covers/08-melukis-senja.svg" alt="Cover lagu Melukis Senja">
+                    <img src="images/covers/09-sampai-jadi-debu.svg" alt="Cover lagu Sampai Jadi Debu">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Sebelumnya</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Berikutnya</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== 2. TOP 10 LAGU INDONESIA ===== -->
+    <section id="top10" class="section-space" aria-labelledby="judul-top10">
+      <div class="container">
+        <h2 id="judul-top10" class="section-title">Top 10 Lagu Indonesia</h2>
+        <p class="section-lead">Tekan tombol play di kartu mana pun untuk mulai mendengarkan.</p>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
+          <div class="col">
+            <article class="card song-card h-100">
+              <div class="position-relative">
+                <img src="images/covers/01-komang.svg" class="card-img-top" alt="Cover lagu Komang" width="300" height="300" loading="lazy">
+                <span class="rank-badge">#1</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h6 mb-1">Komang</h3>
+                <p class="card-text mb-3">Raim Laode</p>
+                <audio class="mt-auto" controls preload="none" src="audio/01-komang.mp3" aria-label="Putar Komang - Raim Laode">Browser kamu tidak mendukung audio.</audio>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card song-card h-100">
+              <div class="position-relative">
+                <img src="images/covers/02-hati-hati-di-jalan.svg" class="card-img-top" alt="Cover lagu Hati-Hati di Jalan" width="300" height="300" loading="lazy">
+                <span class="rank-badge">#2</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h6 mb-1">Hati-Hati di Jalan</h3>
+                <p class="card-text mb-3">Tulus</p>
+                <audio class="mt-auto" controls preload="none" src="audio/02-hati-hati-di-jalan.mp3" aria-label="Putar Hati-Hati di Jalan - Tulus">Browser kamu tidak mendukung audio.</audio>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card song-card h-100">
+              <div class="position-relative">
+                <img src="images/covers/03-sial.svg" class="card-img-top" alt="Cover lagu Sial" width="300" height="300" loading="lazy">
+                <span class="rank-badge">#3</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h6 mb-1">Sial</h3>
+                <p class="card-text mb-3">Mahalini</p>
+                <audio class="mt-auto" controls preload="none" src="audio/03-sial.mp3" aria-label="Putar Sial - Mahalini">Browser kamu tidak mendukung audio.</audio>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card song-card h-100">
+              <div class="position-relative">
+                <img src="images/covers/04-nina.svg" class="card-img-top" alt="Cover lagu Nina" width="300" height="300" loading="lazy">
+                <span class="rank-badge">#4</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h6 mb-1">Nina</h3>
+                <p class="card-text mb-3">Feby Putri</p>
+                <audio class="mt-auto" controls preload="none" src="audio/04-nina.mp3" aria-label="Putar Nina - Feby Putri">Browser kamu tidak mendukung audio.</audio>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card song-card h-100">
+              <div class="position-relative">
+                <img src="images/covers/05-bertaut.svg" class="card-img-top" alt="Cover lagu Bertaut" width="300" height="300" loading="lazy">
+                <span class="rank-badge">#5</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h6 mb-1">Bertaut</h3>
+                <p class="card-text mb-3">Nadin Amizah</p>
+                <audio class="mt-auto" controls preload="none" src="audio/05-bertaut.mp3" aria-label="Putar Bertaut - Nadin Amizah">Browser kamu tidak mendukung audio.</audio>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card song-card h-100">
+              <div class="position-relative">
+                <img src="images/covers/06-lathi.svg" class="card-img-top" alt="Cover lagu Lathi" width="300" height="300" loading="lazy">
+                <span class="rank-badge">#6</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h6 mb-1">Lathi</h3>
+                <p class="card-text mb-3">Weird Genius ft. Sara Fajira</p>
+                <audio class="mt-auto" controls preload="none" src="audio/06-lathi.mp3" aria-label="Putar Lathi - Weird Genius ft. Sara Fajira">Browser kamu tidak mendukung audio.</audio>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card song-card h-100">
+              <div class="position-relative">
+                <img src="images/covers/07-terlalu-lama-sendiri.svg" class="card-img-top" alt="Cover lagu Terlalu Lama Sendiri" width="300" height="300" loading="lazy">
+                <span class="rank-badge">#7</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h6 mb-1">Terlalu Lama Sendiri</h3>
+                <p class="card-text mb-3">Kunto Aji</p>
+                <audio class="mt-auto" controls preload="none" src="audio/07-terlalu-lama-sendiri.mp3" aria-label="Putar Terlalu Lama Sendiri - Kunto Aji">Browser kamu tidak mendukung audio.</audio>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card song-card h-100">
+              <div class="position-relative">
+                <img src="images/covers/08-melukis-senja.svg" class="card-img-top" alt="Cover lagu Melukis Senja" width="300" height="300" loading="lazy">
+                <span class="rank-badge">#8</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h6 mb-1">Melukis Senja</h3>
+                <p class="card-text mb-3">Budi Doremi</p>
+                <audio class="mt-auto" controls preload="none" src="audio/08-melukis-senja.mp3" aria-label="Putar Melukis Senja - Budi Doremi">Browser kamu tidak mendukung audio.</audio>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card song-card h-100">
+              <div class="position-relative">
+                <img src="images/covers/09-sampai-jadi-debu.svg" class="card-img-top" alt="Cover lagu Sampai Jadi Debu" width="300" height="300" loading="lazy">
+                <span class="rank-badge">#9</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h6 mb-1">Sampai Jadi Debu</h3>
+                <p class="card-text mb-3">Banda Neira</p>
+                <audio class="mt-auto" controls preload="none" src="audio/09-sampai-jadi-debu.mp3" aria-label="Putar Sampai Jadi Debu - Banda Neira">Browser kamu tidak mendukung audio.</audio>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card song-card h-100">
+              <div class="position-relative">
+                <img src="images/covers/10-kota-ini-tak-sama-tanpamu.svg" class="card-img-top" alt="Cover lagu Kota Ini Tak Sama Tanpamu" width="300" height="300" loading="lazy">
+                <span class="rank-badge">#10</span>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h6 mb-1">Kota Ini Tak Sama Tanpamu</h3>
+                <p class="card-text mb-3">Nadhif Basalamah</p>
+                <audio class="mt-auto" controls preload="none" src="audio/10-kota-ini-tak-sama-tanpamu.mp3" aria-label="Putar Kota Ini Tak Sama Tanpamu - Nadhif Basalamah">Browser kamu tidak mendukung audio.</audio>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. PILIH SUASANA ===== -->
+    <section class="section-space pt-0" aria-labelledby="judul-suasana">
+      <div class="container">
+        <h2 id="judul-suasana" class="section-title">Mau dengar apa hari ini?</h2>
+        <p class="section-lead">Pilih suasana, kami tunjukkan lagunya.</p>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3">
+          <div class="col">
+            <a class="mood-tile mood-1" href="search.html">
+              <i class="bi bi-moon-stars" aria-hidden="true"></i>
+              <h3>Galau Malam</h3>
+              <p>Lagu pelan untuk hati yang ramai</p>
+            </a>
+          </div>
+          <div class="col">
+            <a class="mood-tile mood-2" href="search.html">
+              <i class="bi bi-cup-hot" aria-hidden="true"></i>
+              <h3>Santai Sore</h3>
+              <p>Teman minum teh dan senja</p>
+            </a>
+          </div>
+          <div class="col">
+            <a class="mood-tile mood-3" href="search.html">
+              <i class="bi bi-sunrise" aria-hidden="true"></i>
+              <h3>Semangat Pagi</h3>
+              <p>Awali hari dengan tenaga penuh</p>
+            </a>
+          </div>
+          <div class="col">
+            <a class="mood-tile mood-4" href="search.html">
+              <i class="bi bi-book" aria-hidden="true"></i>
+              <h3>Fokus Belajar</h3>
+              <p>Tenang, cocok untuk mengerjakan tugas</p>
+            </a>
+          </div>
+          <div class="col">
+            <a class="mood-tile mood-5" href="search.html">
+              <i class="bi bi-car-front" aria-hidden="true"></i>
+              <h3>Teman Perjalanan</h3>
+              <p>Bernyanyi bersama di jalan</p>
+            </a>
+          </div>
+          <div class="col">
+            <a class="mood-tile mood-6" href="search.html">
+              <i class="bi bi-music-note-beamed" aria-hidden="true"></i>
+              <h3>Akustik</h3>
+              <p>Petikan gitar dan suara jernih</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. FITUR ===== -->
+    <section class="section-space pt-0" aria-labelledby="judul-fitur">
+      <div class="container">
+        <h2 id="judul-fitur" class="section-title">Kenapa Purplify</h2>
+        <p class="section-lead">Sederhana, cepat, dan tidak butuh koneksi.</p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="feature-card">
+              <span class="feature-icon"><i class="bi bi-wifi-off" aria-hidden="true"></i></span>
+              <h3 class="h5">Diputar offline</h3>
+              <p class="mb-0 text-secondary">Lagu dibaca dari file MP3 di folder <code>audio</code>. Tidak perlu internet dan tidak memakai kuota.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="feature-card">
+              <span class="feature-icon"><i class="bi bi-collection-play" aria-hidden="true"></i></span>
+              <h3 class="h5">Playlist siap dengar</h3>
+              <p class="mb-0 text-secondary">Top 10 Indonesia dan tiga playlist suasana sudah tersusun rapi di halaman Playlist.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="feature-card">
+              <span class="feature-icon"><i class="bi bi-search" aria-hidden="true"></i></span>
+              <h3 class="h5">Cari sesuai genre</h3>
+              <p class="mb-0 text-secondary">Saring lagu berdasarkan Pop, Indie, Folk, atau Elektronik hanya dengan satu klik.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. NEWSLETTER (FORM) ===== -->
+    <section class="section-space pt-0" aria-labelledby="judul-newsletter">
+      <div class="container">
+        <div class="newsletter">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+              <h2 id="judul-newsletter" class="h1">Rekomendasi lagu tiap minggu</h2>
+              <p class="mb-0">Masukkan email dan kami kirim tiga lagu Indonesia yang layak kamu dengar.</p>
+            </div>
+            <div class="col-lg-6">
+              <form action="#" method="post">
+                <label for="emailNewsletter" class="visually-hidden">Alamat email</label>
+                <div class="input-group input-group-lg">
+                  <input type="email" class="form-control" id="emailNewsletter" name="email" placeholder="nama@email.com" required>
+                  <button class="btn btn-dark" type="submit">Berlangganan</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer py-5 mt-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <a class="d-flex align-items-center gap-2 mb-3 text-decoration-none" href="index.html">
+            <img src="images/logo.svg" width="36" height="36" alt="">
+            <span class="h4 mb-0 text-white">Purplify</span>
+          </a>
+          <p>Pemutar musik bertema ungu untuk lagu-lagu Indonesia. Semua lagu diputar dari file MP3 di komputer, jadi bisa didengar offline.</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h2>Jelajahi</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="playlist.html">Playlist</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="login.html">Login &amp; Register</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h2>Tentang proyek</h2>
+          <p class="small">Proyek Mid Web Design, dibuat dengan HTML, CSS, dan Bootstrap. Cover dan ilustrasi dibuat khusus untuk proyek ini. Hak cipta lagu milik masing-masing artis.</p>
+        </div>
+      </div>
+      <hr class="border-secondary-subtle my-4">
+      <p class="small mb-0">&copy; 2026 Purplify. Dibuat oleh kelompok ANONYMOUS untuk tugas kuliah.</p>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
